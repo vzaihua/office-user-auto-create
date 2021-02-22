@@ -1,3 +1,7 @@
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
 const notice = '公告，留空不显示'
 
 const officeConfig = {
@@ -23,9 +27,12 @@ const AADConfig = {
 
 const KV = _KV
 
-const genCodesPassword = 'password'
+const genCodesPassword = ''
 const genCodesAmount = 10
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 class CreateOfficeUser {
 
@@ -42,6 +49,7 @@ class CreateOfficeUser {
 		this.createPassword()
 		await this.getAccessToken()
 		await this.createUser()
+		await sleep(1000)
 		await this.assignLicense()
 		return {
 			email: this.userEmail,
