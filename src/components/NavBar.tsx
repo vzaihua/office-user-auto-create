@@ -29,7 +29,7 @@ export default function NavBar() {
                             icon={<QuestionOutlined/>}
                             onClick={() =>
                                 window.open(
-                                    'https://github.com/zayabighead/Office-User-Auto-Create'
+                                    'https://github.com/KusakabeSi/Office-User-Auto-Create'
                                 )}
                     />
                 </div>
